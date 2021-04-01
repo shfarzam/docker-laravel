@@ -4,14 +4,14 @@ networks:
   laravel:
 
 services:
-  ngix:
+  nginx:
     image: library/nginx:stable-alpine
     container_name: nginx
     ports:
       - "8088:80"
     volumes:
       - ./src:/var/www/html
-      - ./nginx/default.conf:etc/nginx/conf.d/deafult.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/deafult.conf
     depends_on:
       - php
       - mysql
