@@ -39,8 +39,8 @@ RUN apk update && apk add zip \
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Add user for laravel application
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
+RUN addgroup -g 1000 www
+RUN adduser -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 COPY ./src /var/www
