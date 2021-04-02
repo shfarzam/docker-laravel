@@ -7,7 +7,7 @@ COPY  ./src/composer.json /var/www/
 WORKDIR /var/www
 
 # Install dependencies
-RUN apk update && apk add libpng-dev \
+RUN apk add libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
@@ -19,7 +19,7 @@ RUN apk update && apk add libpng-dev \
     curl
 
 # Clear cache
-RUN apk clean && rm -rf /var/lib/apt/lists/*
+#RUN apk clean && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pdo pdo_mysql
 
