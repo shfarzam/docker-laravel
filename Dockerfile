@@ -7,7 +7,7 @@ COPY  ./src/composer.json /var/www/
 WORKDIR /var/www
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
+RUN apk update && apk add install -y \
     build-essential \
     libpng-dev \
     libjpeg62-turbo-dev \
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     curl
 
 # Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apk clean && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pdo pdo_mysql
 
@@ -30,10 +30,10 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
-COPY . /var/www
+COPY ./src /var/www
 
 # Copy existing application directory permissions
-COPY --chown=www:www . /var/www
+COPY --chown=www:www ./src /var/www
 
 # Change current user to www
 USER www
