@@ -7,8 +7,7 @@ COPY  ./src/composer.json /var/www/
 WORKDIR /var/www
 
 # Install dependencies
-RUN apk update && apk add build-essential \
-    libpng-dev \
+RUN apk update && apk add libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
