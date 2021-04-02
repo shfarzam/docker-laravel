@@ -10,7 +10,7 @@ services:
     ports:
       - "8088:80"
     volumes:
-      - ./src:/var/www/html
+      - ./src:/var/www
       - ./nginx/default.conf:/etc/nginx/conf.d/deafult.conf
     depends_on:
       - php
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "4306:3306"
+      - "3306:3306"
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
@@ -43,8 +43,26 @@ services:
       dockerfile: Dockerfile
     container_name: php
     volumes:
-    - ./src:/var/www/html
+      - ./src:/var/www
     ports:
-    - "9000:9000"
+      - "9000:9000"
+    networks:
+      - laravel
+
+  composer:
+    image: composer:latest
+    container_name: composer
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    networks:
+      - laravel
+
+  npm:
+    image: node:13.7
+    container_name: npm
+    volumes:
+      - ./src:/var/www/html
+    entrypoint: ['npm']
     networks:
       - laravel
