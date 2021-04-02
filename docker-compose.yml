@@ -5,10 +5,13 @@ networks:
 
 services:
   nginx:
-    image: library/nginx:stable-alpine
+    image: nginx:stable-alpine
     container_name: nginx
+    restart: unless-stopped
+    tty: true
     ports:
-      - "8088:80"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./src:/var/www
       - ./nginx/default.conf:/etc/nginx/conf.d/deafult.conf
@@ -28,11 +31,11 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: frm
-      MYSQL_USER: user
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
-      SERVICE_TAGS: dev
+      MYSQL_DATABASE: portal
+      MYSQL_USER: shah
+      MYSQL_PASSWORD: Sh13620722#
+      MYSQL_ROOT_PASSWORD: Sh13620722
+      SERVICE_TAGS: Test-Server
       SERVICE_NAME: mysql
     networks:
       - laravel
@@ -44,8 +47,6 @@ services:
     container_name: php
     volumes:
       - ./src:/var/www
-    ports:
-      - "9000:9000"
     networks:
       - laravel
 
@@ -58,11 +59,8 @@ services:
     networks:
       - laravel
 
-  npm:
-    image: node:13.7
-    container_name: npm
-    volumes:
-      - ./src:/var/www/html
-    entrypoint: ['npm']
-    networks:
-      - laravel
+
+
+  networks:
+    laravel:
+      driver: bridge
