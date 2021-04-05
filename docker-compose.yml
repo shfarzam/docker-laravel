@@ -30,7 +30,7 @@ services:
     environment:
       MYSQL_DATABASE: portal
       MYSQL_USER: shah
-      MYSQL_PASSWORD: Sh13620722#
+      MYSQL_PASSWORD: Sh13620722
       MYSQL_ROOT_PASSWORD: Sh13620722
       SERVICE_TAGS: Test-Server
       SERVICE_NAME: mysql
