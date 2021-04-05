@@ -40,7 +40,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 RUN addgroup -g 1000 -S www
 RUN adduser  -u 1000 -S www -G www
 
-RUN mkdir -p /var/www \
+RUN mkdir -p /var/www/vendor \
  && chown -R www:www /var/www
 
 
