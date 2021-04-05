@@ -56,7 +56,7 @@ WORKDIR /var/www
 # Change current user to www
 USER www
 
-RUN chown 775 -R /var/www
+#RUN chown 775 -R /var/www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
