@@ -93,7 +93,7 @@
 
         <div class="col-md-6" style="width: fit-content;">
             <div >
-                <img src="img/Img-Intro.png" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
+                <img src="{{ asset('img/Img-Intro.png') }}" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
             </div>
 
         </div>
