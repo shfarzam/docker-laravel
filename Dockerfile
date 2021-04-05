@@ -1,9 +1,5 @@
 FROM php:7.4-fpm-alpine
 
-# Copy composer.lock and composer.json ./src/composer.lock
-COPY  ./src/composer.json /var/www/
-COPY  ./src/composer.lock /var/www/
-
 
 # Install dependencies
 RUN apk add --no-cache \
@@ -43,20 +39,29 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 # Add user for laravel application
 RUN addgroup -g 1000 -S www
 RUN adduser  -u 1000 -S www -G www
+
+RUN mkdir -p /var/www \
+ && chown -R www:www /var/www
+
+
 # Copy existing application directory contents
 COPY ./src /var/www
+# Copy composer.lock and composer.json ./src/composer.lock
+COPY  ./src/composer.json /var/www/
+COPY  ./src/composer.lock /var/www/
+
 
 # Copy existing application directory permissions
-COPY --chown=www:www ./src /var/www
+#COPY --chown=www:www ./src /var/www
 
-
-# Set working directory
-WORKDIR /var/www
 
 # Change current user to www
 USER www
 
 #RUN chown 775 -R /var/www
+
+# Set working directory
+WORKDIR /var/www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
