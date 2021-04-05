@@ -4,8 +4,6 @@ FROM php:7.4-fpm-alpine
 COPY  ./src/composer.json /var/www/
 COPY  ./src/composer.lock /var/www/
 
-# Set working directory
-WORKDIR /var/www
 
 # Install dependencies
 RUN apk add --no-cache \
@@ -50,6 +48,10 @@ COPY ./src /var/www
 
 # Copy existing application directory permissions
 COPY --chown=www:www ./src /var/www
+RUN chown 777 -R www:www /var/www
+
+# Set working directory
+WORKDIR /var/www
 
 # Change current user to www
 USER www
