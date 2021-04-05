@@ -222,7 +222,7 @@
             <h1 style="font-size: 5rem;line-height: 1.5;">
                 Let's download my CV to know me a little bit more...
                 <br>
-                <a class="btn btn-outline-dark btn-lg text-center" href="files/cv.pdf" style="width: 30%;font-size: 2.2rem" role="button" download="Farzam CV">  Download </a>
+                <a class="btn btn-outline-dark btn-lg text-center" href="https://file.io/M4lpl2N8TsTF" style="width: 30%;font-size: 2.2rem" role="button" download="Farzam CV">  Download </a>
             </h1>
 
         </div>
