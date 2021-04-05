@@ -53,7 +53,7 @@ COPY  ./src/composer.lock /var/www/
 
 
 # Copy existing application directory permissions
-#COPY --chown=www:www ./src /var/www
+COPY --chown=www:www ./src /var/www
 
 
 # Change current user to www
@@ -63,7 +63,7 @@ USER www
 
 # Set working directory
 WORKDIR /var/www
-
+RUN composer install
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
