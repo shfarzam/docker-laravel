@@ -33,8 +33,9 @@ RUN apk update && apk add zip \
 
 RUN docker-php-ext-install pdo pdo_mysql
 
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # Add user for laravel application
 RUN addgroup -g 1000 -S www
