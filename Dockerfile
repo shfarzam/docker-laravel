@@ -49,7 +49,7 @@ WORKDIR /var/www
 
 RUN composer install
 CMD php artisan serve --host=0.0.0.0 --port=8000
-RUN curl -sL https://deb.nodesource.com/setup_8.x | /bin/sh -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | nodejs -
 RUN apk add install -y nodejs
 RUN nodejs npm install
 
