@@ -64,6 +64,11 @@ USER www
 # Set working directory
 WORKDIR /var/www
 RUN composer install
+
+
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
-CMD ["php-fpm"]
+#CMD ["php-fpm"]
+CMD ["/bin/sh"]
+
+ENTRYPOINT ["/bin/sh", "-c"]
