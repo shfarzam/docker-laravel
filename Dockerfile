@@ -2,6 +2,7 @@ FROM php:7.4-fpm-alpine
 
 # Copy composer.lock and composer.json ./src/composer.lock
 COPY  ./src/composer.json /var/www/
+COPY  ./src/composer.lock /var/www/
 
 # Set working directory
 WORKDIR /var/www
