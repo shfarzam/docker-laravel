@@ -93,7 +93,7 @@
 
         <div class="col-md-6" style="width: fit-content;">
             <div >
-                <img src="https://drive.google.com/file/d/1EBstRh20wklTUBVjCNsrcsobZuyMH504/view?usp=sharing" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
+                <img src="https://i.postimg.cc/bJ5pCdkq/Img-Intro.png" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
             </div>
 
         </div>
@@ -104,7 +104,7 @@
     <div class="row ">
         <div class="col-md-6" style="width: fit-content;">
             <div>
-                <img src="img/Img-Intro2.png" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
+                <img src="https://i.postimg.cc/wxs1Kdvw/Img-Intro2.png" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
             </div>
         </div>
 
@@ -192,7 +192,7 @@
 
         <div class="col-md-6" style="width: fit-content;">
             <div>
-                <img src="img/Img-Skill.png" class="img-responsive" alt="Skills" style="width: 100%;height: 100%;">
+                <img src="https://i.postimg.cc/T3PG6r0T/Img-Skill.png" class="img-responsive" alt="Skills" style="width: 100%;height: 100%;">
             </div>
         </div>
 
@@ -202,7 +202,7 @@
     <div class="row " id="project-section">
         <div class="col-md-6" style="width: fit-content;">
             <div>
-                <img src="img/Img-project.png" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
+                <img src="https://i.postimg.cc/QCsGn5VG/Img-project.png" class="img-responsive" alt="I am Software Engineer" style="width: 100%;height: 100%;">
             </div>
         </div>
 
@@ -228,7 +228,7 @@
         </div>
         <div class="col-md-6" style="width: fit-content; padding-left: 1%;">
             <div>
-                <img src="img/Img-resume.png" class="img-responsive" alt="My Resume" style="width: 100%;height: 100%;">
+                <img src="https://i.postimg.cc/pXsbqmH4/Img-resume.png" class="img-responsive" alt="My Resume" style="width: 100%;height: 100%;">
             </div>
         </div>
 
@@ -239,7 +239,7 @@
     <div class="row " id="contact-section">
         <div class="col-md-6" style="width: fit-content;">
             <div>
-                <img src="img/Img-Contact.png" class="img-responsive" alt="Contact Me" style="width: 100%;height: 100%;">
+                <img src="https://i.postimg.cc/rmXvKW10/Img-Contact.png" class="img-responsive" alt="Contact Me" style="width: 100%;height: 100%;">
             </div>
         </div>
 
