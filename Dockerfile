@@ -41,6 +41,9 @@ COPY  ./src/composer.lock /var/www/
 RUN apk update && apk add nodejs nodejs-npm
 #install vue
 RUN npm install vue
+RUN npm install cross-env
+RUN npm install webpack --save
+
 # Change current user to www
 USER www
 
