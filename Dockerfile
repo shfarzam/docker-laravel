@@ -44,6 +44,7 @@ RUN npm install vue
 RUN npm install cross-env &&\
     npm install webpack --save &&\
     npm i --save-dev laravel-mix@latest &&\
+    npm install --save axios &&\
     npm run watch
 
 # Change current user to www
