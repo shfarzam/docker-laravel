@@ -14,3 +14,6 @@ docker build -t git:latest .
 docker run -it --rm -v $PWD:/repo -w /repo git pull
 ```
 
+```
+docker-compose up --build -d
+```
