@@ -41,8 +41,10 @@ COPY  ./src/composer.lock /var/www/
 RUN apk update && apk add nodejs nodejs-npm
 #install vue
 RUN npm install vue
-RUN npm install cross-env
-RUN npm install webpack --save
+RUN npm install cross-env &&\
+    npm install webpack --save &&\
+    npm i --save-dev laravel-mix@latest &&\
+    npm run watch
 
 # Change current user to www
 USER www
