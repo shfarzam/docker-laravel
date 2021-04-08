@@ -9,9 +9,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="d-flex align-items-center">
 
-<div class="container-md d-flex align-items-center bg-light">
+<div class="container-md  bg-light">
     <h2>Please Login</h2>
     <form action="#" method="post" class="needs-validation" novalidate>
         @csrf
