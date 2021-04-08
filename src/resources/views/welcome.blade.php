@@ -325,18 +325,20 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body bg-light">
                 <h2 style="font-family: 'Dosis', sans-serif">
                     “I love turning great ideas into reality.”
                 </h2>
                 <br>
                 <h4 style="text-align: justify;text-justify: inter-word;">
                     <p>
-                        I am Shahriar Farzam. I was born at 1983 in Tehran, Iran.<br>
+                        I am Shahriar Farzam. I was born at 1983 in Tehran, Iran.
                         Also I am a Software Engineer with experience in a number of technologies, frameworks and programming languages, focusing on PHP and Web technologies.
                     </p>
                     <p>
-                        I believes the team is the key of success. Encourage dialogue as the main tool of the team, decision-making, encourage independent learning, imagination and initiatives in new ideas.<br>
+                        I believes the team is the key of success. Encourage dialogue as the main tool of the team, decision-making, encourage independent learning, imagination and initiatives in new ideas.
+                    </p>
+                    <p>
                         Passionate about continuous improvement, good manners, social skills, teamwork, hard work, fast learner, tenacity to face problems, customer satisfaction and the duty to do things the right way.
                     </p>
                     Years of experience designing and developing desktop and web applications. Proficient in Object-Oriented Design, Software Analysis, Agile Development, Database Design, Troubleshooting, Debugging.<br>
