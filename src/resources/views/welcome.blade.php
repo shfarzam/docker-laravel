@@ -326,11 +326,21 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <h2 style="font-family: 'Dosis', sans-serif">
+                    “I love turning great ideas into reality.”
+                </h2>
+                <h4>
+                    I am Shahriar Farzam. I was born at 1983 in Tehran, Iran.<br>
+                    Also I am a Software Engineer with experience in a number of technologies, frameworks and programming languages, focusing on PHP, Web and .NET technologies.<br>
+                    I believes the team is the key of success. Encourage dialogue as the main tool of the team, decision-making, encourage independent learning, imagination and initiatives in new ideas.<br>
+                    Passionate about continuous improvement, good manners, social skills, teamwork, hard work, fast learner, tenacity to face problems, customer satisfaction and the duty to do things the right way.<br>
+                    Years of experience designing and developing desktop and web applications. Proficient in Object-Oriented Design, Software Analysis, Agile Development, Database Design, Troubleshooting, Debugging.<br>
+                    Now, everything begins. Again.<br>
+                </h4>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
             </div>
         </div>
     </div>
