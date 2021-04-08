@@ -11,7 +11,7 @@
 </head>
 <body class="d-flex align-items-center">
 
-<div class="container-md  bg-light">
+<div class="container-sd  bg-light" style="margin-top: 30%;">
     <h2>Please Login</h2>
     <form action="#" method="post" class="needs-validation" novalidate>
         @csrf
