@@ -317,7 +317,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalLongTitle">A little bit more about me</h5>
@@ -329,9 +329,10 @@
                 <h2 style="font-family: 'Dosis', sans-serif">
                     “I love turning great ideas into reality.”
                 </h2>
-                <h4>
+                <br>
+                <h4 style="text-align-all: justify;">
                     I am Shahriar Farzam. I was born at 1983 in Tehran, Iran.<br>
-                    Also I am a Software Engineer with experience in a number of technologies, frameworks and programming languages, focusing on PHP, Web and .NET technologies.<br>
+                    Also I am a Software Engineer with experience in a number of technologies, frameworks and programming languages, focusing on PHP and Web technologies.<br>
                     I believes the team is the key of success. Encourage dialogue as the main tool of the team, decision-making, encourage independent learning, imagination and initiatives in new ideas.<br>
                     Passionate about continuous improvement, good manners, social skills, teamwork, hard work, fast learner, tenacity to face problems, customer satisfaction and the duty to do things the right way.<br>
                     Years of experience designing and developing desktop and web applications. Proficient in Object-Oriented Design, Software Analysis, Agile Development, Database Design, Troubleshooting, Debugging.<br>
