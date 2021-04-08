@@ -24,7 +24,7 @@ $(document).ready(function(){
     var longitude;
     var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather';
 
-    $.get("https://api.ipdata.co?api-key=test", function (response) {
+    $.get("https://api.ipdata.co?api-key=acea3ddd434eb4bc51f38976dd84942d4d3651f79abade4f86e94f4c", function (response) {
         latitude  = response.latitude;
         longitude = response.longitude;
         $('#city').html(response.city + ", " + response.region);
