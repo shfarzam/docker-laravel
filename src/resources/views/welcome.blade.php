@@ -213,8 +213,8 @@
             <h1 style="font-size: 5rem;line-height: 1.5;" class="d-flex align-items-center text-center">
                 <a class="btn btn-outline-dark btn-lg" href="https://github.com/shfarzam/docker-laravel" style="width: 100%;font-size: 2.2rem" role="button">  See some Sample Projects here...</a>
             </h1>
-            <br><br>
-            <h1 style="font-size: 5rem;line-height: 1.5;" class=" text-center">
+
+            <h1 style="font-size: 5rem;line-height: 1.5;" class="d-flex align-items-bottom text-center">
                 <a class="btn btn-outline-dark btn-lg" href="login" style="width: 100%;font-size: 2.2rem" role="button"> Simple Login Demo</a>
             </h1>
 
