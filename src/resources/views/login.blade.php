@@ -13,7 +13,7 @@
 
 <div class="container-md  bg-light" style="margin-top: 3em;">
     <h2>Please Login</h2>
-    <form action="#" method="post" class="needs-validation" novalidate>
+    <form action="user" method="post" class="needs-validation" novalidate>
         @csrf
         <div class="form-group">
             <label for="uname">Username:</label>
