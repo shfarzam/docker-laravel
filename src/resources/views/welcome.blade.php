@@ -48,6 +48,9 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#ModalCenter"><h4>Let's read a little bit more about me</h4></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="tel:004917643613808"><h4>Let's talk via Phone</h4></a>
                 </li>
                 <li class="nav-item">
