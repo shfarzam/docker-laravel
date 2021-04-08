@@ -59,6 +59,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#cv-section"><h4>Let's see my CV</h4></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login"><h4>See Simple Login Demo</h4></a>
+                </li>
             </ul>
         </div>
 
@@ -212,10 +215,6 @@
         <div class="col-md-6 d-flex align-items-center text-center " style="padding-left: 10%;">
             <h1 style="font-size: 5rem;line-height: 1.5;" class="d-flex align-items-center text-center">
                 <a class="btn btn-outline-dark btn-lg" href="https://github.com/shfarzam/docker-laravel" style="width: 100%;font-size: 2.2rem" role="button">  See some Sample Projects here...</a>
-            </h1>
-
-            <h1 style="font-size: 5rem;line-height: 1.5;" class="d-flex align-items-end text-center">
-                <a class="btn btn-outline-dark btn-lg" href="login" style="width: 100%;font-size: 2.2rem" role="button"> Simple Login Demo</a>
             </h1>
 
         </div>
