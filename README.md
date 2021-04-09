@@ -17,7 +17,8 @@ Info:
 
 To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 
-#Docker
+##Docker
+
 Run git on Server
 ```
 docker build -t git:latest .
