@@ -13,6 +13,9 @@ Info:
   - Vue
   - JQuery
   - Bootstrap
+## Usage
+
+To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 
 #Docker
 Run git on Server
