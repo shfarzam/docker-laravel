@@ -28,12 +28,12 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: portal
-      MYSQL_USER: shah
-      MYSQL_PASSWORD: Sh13620722
-      MYSQL_ROOT_PASSWORD: Sh13620722
-      SERVICE_TAGS: Test-Server
-      SERVICE_NAME: mysql
+      MYSQL_DATABASE: "portal"
+      MYSQL_USER: "shah"
+      MYSQL_PASSWORD: "Sh13620722"
+      MYSQL_ROOT_PASSWORD: "Sh13620722"
+      SERVICE_TAGS: "Test-Server"
+      SERVICE_NAME: "mysql"
     networks:
       - laravel
 
