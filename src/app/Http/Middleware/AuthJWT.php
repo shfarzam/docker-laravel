@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use http\Env;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -11,6 +12,7 @@ use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
 class AuthJWT extends BaseMiddleware
 {
+
     /**
      * Handle an incoming request.
      *
@@ -31,6 +33,7 @@ class AuthJWT extends BaseMiddleware
                 return response()->json(['status' => 'Authorization Token not found']);
             }
         }
+        $GLOBALS['userInfo'] = $user;
         return $next($request);
     }
 }
