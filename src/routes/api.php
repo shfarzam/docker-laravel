@@ -19,14 +19,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware'=>['AuthJWT']], function () {
-    Route::get('/users/all',[\App\Http\Controllers\UserController::class,'all']);
+    Route::get('/users',[\App\Http\Controllers\UserController::class,'all']);
     Route::post('/users',[\App\Http\Controllers\UserController::class,'addUser']);
+
+    Route::get('/customers',[\App\Http\Controllers\Customer::class,'all']);
+    Route::post('/customers',[\App\Http\Controllers\Customer::class,'addCustomer']);
+    Route::put('/customers',[\App\Http\Controllers\Customer::class,'editCustomer']);
+
+    Route::get('/products',[\App\Http\Controllers\Product::class,'all']);
+    Route::post('/products',[\App\Http\Controllers\Customer::class,'addCustomer']);
 });
 
 Route::get('/login',function (Request $request) {
    $credentials = $request->only(['email','password']);
-    //$token = auth()->attempt($credentials);
-    $token = auth('api')->attempt($credentials);
+   $token = auth('api')->attempt($credentials);
 
     if (! $token) {
         return response()->json(['error' => 'Unauthorized'], 401);
