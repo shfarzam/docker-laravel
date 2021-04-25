@@ -5,21 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User as UserDB;
+use App\Models\Customer as CustomerDB;
 
 class MainController extends Controller
 {
+    private $columns;
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     function login() {
         return view('auth.login');
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     function register() {
         return view('auth.register');
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     function save(Request $request) {
 
         # validate request
         $request->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => 'required|string',
+            'lname' => 'required|string',
             'email' => 'required|email|unique:users',
             'pswd'  => 'required|min:6|max:20'
         ]);
@@ -39,6 +54,10 @@ class MainController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     function checkLogin(Request $request) {
 
         # validate request
@@ -59,7 +78,7 @@ class MainController extends Controller
                 if(strcmp($request->uname, env('ADMIN_USER','sh.farzam@hotmail.com')) == 0) {
                     return redirect('admin/dashboard');
                 } else {
-                    return redirect('shop/products'.env('ADMIN_USER'));
+                    return redirect('shop/products');
                 }
 
 
@@ -69,6 +88,9 @@ class MainController extends Controller
         }
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     function logout(){
         if(session()->has('UserID')){
             session()->pull('UserID');
@@ -76,8 +98,17 @@ class MainController extends Controller
         }
     }
 
-    function dashboard(){
-        $data = ['UserInfo'=>User::where('id','=', session('UserID'))->first()];
+    /**
+     * @param string $table
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    function dashboard($table = 'users'){
+        $data = [
+            'UserInfo' => User::where('id','=', session('UserID'))->first(),
+            'Result'   => $this->getTableData($table),
+            'columns'  => $this->columns
+        ];
+
         return view('admin.dashboard', $data);
     }
 
@@ -86,13 +117,31 @@ class MainController extends Controller
         return view('admin.settings', $data);
     }
 
-    function profile(){
-        $data = ['UserInfo'=>User::where('id','=', session('UserID'))->first()];
-        return view('admin.profile', $data);
+    /**
+     * @param $table
+     */
+    function setColumnList($table){
+        $table = $table->getTable();
+        $this->columns = \DB::getSchemaBuilder()->getColumnListing($table);
     }
-    function staff(){
-        $data = ['UserInfo'=>User::where('id','=', session('UserID'))->first()];
-        return view('admin.staff', $data);
+
+    /**
+     * @param $table
+     * @return mixed
+     */
+    function getTableData($table){
+        $table_map = [
+            'users' => 'User',
+            'customers' => 'Customer',
+            'orders' => 'Order',
+            'products' => 'Product'
+
+        ];
+        $class_name = 'App\\Models\\'.$table_map[$table];
+        $db = new $class_name;
+        $this->setColumnList($db);
+
+        return $db->paginate(15);
     }
 
 }
