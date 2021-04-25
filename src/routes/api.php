@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,20 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group(['middleware'=>['AuthJWT']], function () {
-    Route::get('/users',[\App\Http\Controllers\UserController::class,'all']);
-    Route::post('/users',[\App\Http\Controllers\UserController::class,'addUser']);
+    Route::get('/users',[Controllers\User::class,'all']);
+    Route::post('/users',[Controllers\User::class,'addUser']);
 
-    Route::get('/customers',[\App\Http\Controllers\Customer::class,'all']);
-    Route::post('/customers',[\App\Http\Controllers\Customer::class,'addCustomer']);
-    Route::put('/customers',[\App\Http\Controllers\Customer::class,'editCustomer']);
+    Route::get('/customers',[Controllers\Customer::class,'all']);
+    Route::post('/customers',[Controllers\Customer::class,'addCustomer']);
+    Route::put('/customers',[Controllers\Customer::class,'editCustomer']);
 
-    Route::get('/products',[\App\Http\Controllers\Product::class,'all']);
-    Route::post('/products',[\App\Http\Controllers\Customer::class,'addCustomer']);
+    Route::get('/products',[Controllers\Product::class,'all']);
+    Route::post('/products',[Controllers\Product::class,'addProduct']);
+
+    Route::get('/orders',[Controllers\Order::class,'all']);
+    Route::post('/orders',[Controllers\Order::class,'addOrder']);
 });
 
 Route::get('/login',function (Request $request) {
@@ -39,8 +39,8 @@ Route::get('/login',function (Request $request) {
     }
 
     return response()->json([
-        'access_token' => $token,
-        'token_type' => 'bearer',
-        'expires_in' => auth('api')->factory()->getTTL() * 60
+        'access_token'  => $token,
+        'token_type'    => 'bearer',
+        'expires_in'    => auth('api')->factory()->getTTL() * 60
     ]);
 });
