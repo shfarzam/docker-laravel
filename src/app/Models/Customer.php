@@ -9,5 +9,10 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'customer_id';
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'user_id'
+    ];
 }
