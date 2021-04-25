@@ -13,12 +13,14 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('products', function (Blueprint $table) {
             $table->bigInteger('product_id')->unique();
             $table->string('p_name');
-            $table->integer('show')->default(1);
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->primary(['product_id','p_name']);
         });

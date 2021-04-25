@@ -13,13 +13,16 @@ class CreateCustomersTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('customers', function (Blueprint $table) {
-            $table->bigInteger('customer_id');
+            $table->bigInteger('customer_id')->unique();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->primary(['customer_id','email']);
         });
