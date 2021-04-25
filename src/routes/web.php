@@ -19,13 +19,14 @@ Route::get('/', function () {
 });
 Route::post('/auth/save',[MainController::class,'save'])->name('auth.save');
 Route::post('/auth/check',[MainController::class,'checkLogin'])->name('auth.check');
-Route::get('/shop/products',[MainController::class,'dashboard']);
+Route::get('/shop/products',[MainController::class,'logout']);
 Route::get('/auth/logout',[MainController::class, 'logout'])->name('auth.logout');
 
 Route::group(['middleware'=>['AuthCheck']], function() {
     Route::get('/auth/login',[MainController::class,'login'])->name('auth.login');
     Route::get('/auth/register',[MainController::class,'register'])->name('auth.register');
-    Route::get('/admin/dashboard',[MainController::class,'dashboard']);
+    Route::get('/admin/dashboard',[MainController::class,'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/dashboard/{table}',[MainController::class,'dashboard'])->name('admin.tables');
 });
 
 Route::post('user',[UserAuth::class,'userLogin']);
