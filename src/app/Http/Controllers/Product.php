@@ -3,42 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product as DB;
+use App\Models\Product as ProductDB;
+use Illuminate\Support\Facades\Response as FacadeResponse;
 use Illuminate\Support\Facades\Validator;
 
 class Product extends Controller
 {
     public function all() {
 
-        return DB::paginate(15);
+        return ProductDB::where('deleted_at',null)->paginate(15);
     }
 
     public function addProduct(Request $request) {
-        $response = [];
 
         //define rules
         $rules = [
-            'product_id'   => 'required|unique:customers',
-            'first_name'    => 'required',
-            'last_name'     => 'required',
-            'email'         => 'required|email|unique:customers'
-        ];
-
-        # validate request
-        $validator = Validator::make($request->json()->all(), $rules);
-
-        if($validator->fails()){
-
-            $response = [
-                'Status'   => 'Fail',
-                'code'     => '400',
-                'messages' => array()
+            'product_id'   => 'required|numeric|unique:customers',
+            'p_name'    => 'required|string|max:150',
             ];
 
-            foreach ($validator->errors()->getMessages() as $item) {
-                array_push($response['messages'], $item);
-            }
+        $validator = new Helper($rules);
+        $result = $validator->validator($request->json()->all());
+
+        if(count($result) > 0) {
+            return FacadeResponse::json($result,400);
         } else {
+            //insert in Databse
+            $product = new ProductDB;
+            $product->product_id = $request->product_id;
+            $product->p_name = $request->p_name;
+            $save = $product->save();
+
+            if ($save) {
+                return response()->json(['status' => 'New User has been successfuly added to database']);
+            } else {
+                return response()->json(['status' => 'Something went wrong, try again later'], 400);
+            }
 
         }
     }

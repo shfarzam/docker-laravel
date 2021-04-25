@@ -22,30 +22,21 @@ class Customer extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function addCustomer(Request $request) {
-        $response = [];
 
         //define rules
         $rules = [
-            'customer_id'   => 'required|unique:customers',
-            'first_name'    => 'required',
-            'last_name'     => 'required',
+            'customer_id'   => 'required|numeric|unique:customers',
+            'first_name'    => 'required|string',
+            'last_name'     => 'required|string',
             'email'         => 'required|email|unique:customers'
         ];
 
         # validate request
-        $validator = Validator::make($request->json()->all(), $rules);
+        $validator = new Helper($rules);
+        $result = $validator->validator($request->json()->all());
 
-        if($validator->fails()){
-
-            $response = [
-                'Status'   => 'Fail',
-                'code'     => '400',
-                'messages' => array()
-            ];
-
-            foreach ($validator->errors()->getMessages() as $item) {
-                array_push($response['messages'], $item);
-            }
+        if(count($result) > 0) {
+            return FacadeResponse::json($result,400);
         } else {
 
             //insert data into Database
@@ -65,28 +56,25 @@ class Customer extends Controller
 
         }
 
-        $code = $response['code'];
-        unset($response['code']);
-
-        return FacadeResponse::json($response,$code);
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function editCustomer(Request $request) {
 
         # validate request
-        $validator = Validator::make($request->json()->all(),[
-             'customer_id' => 'required|exists:customers,customer_id',
-        ]);
-        if($validator->fails()){
-            $response['status'] = "Fail";
-            $response['code'] = "400";
-            $response['messages'] = array();
+        $rules = [
+             'customer_id' => 'required|numeric|exists:customers,customer_id',
+        ];
 
-            foreach ($validator->errors()->getMessages() as $item) {
-                 array_push($response['messages'], $item);
-            }
+        $validator = new Helper($rules);
+        $result = $validator->validator($request->json()->all());
 
+        if(count($result) > 0) {
+            return FacadeResponse::json($result,400);
         } else {
             $customer = DB::find($request->customer_id);
 
@@ -106,10 +94,6 @@ class Customer extends Controller
             }
             }
 
-        $code = $response['code'];
-        unset($response['code']);
-
-        return FacadeResponse::json($response,$code);
     }
 
 
