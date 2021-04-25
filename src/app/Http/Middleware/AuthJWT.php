@@ -7,12 +7,13 @@ use http\Env;
 use Illuminate\Http\Request;
 use Exception;
 
+use Illuminate\Support\Facades\Response as FacadeResponse;
+use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
 class AuthJWT extends BaseMiddleware
 {
-
     /**
      * Handle an incoming request.
      *
@@ -22,6 +23,14 @@ class AuthJWT extends BaseMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        $methods = ['POST', 'PUT', 'DELETE'];
+
+        if (in_array($request->method(), $methods) && empty($request->json()->all())) {
+            return response()->json([
+                'message' => 'The request is not a valid JSON.',
+            ], 400);
+        }
+
         try {
             $user = JWTAuth::parseToken()->authenticate();
         } catch (Exception $e) {
@@ -33,6 +42,7 @@ class AuthJWT extends BaseMiddleware
                 return response()->json(['status' => 'Authorization Token not found']);
             }
         }
+
         $GLOBALS['userInfo'] = $user;
         return $next($request);
     }
