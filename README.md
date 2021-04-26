@@ -127,7 +127,7 @@ JSON BODY:
 
 }
 ```
-## Laravel Usage
+## Laravel Usage [[resource](https://laravel.com/docs/8.x)]
 
 ### artisan
 
@@ -145,12 +145,17 @@ JSON BODY:
 - ``php artisan migrate --seed``
 - ``php artisan migrate:fresh --seed``
 
+**JWT Installing** [[resource](https://jwt-auth.readthedocs.io/en/develop/)]
+- ``composer require tymon/jwt-auth``
+- ``php artisan jwt:secret``
+
 **Clear Route and Config** 
 - ``php artisan config:clear``
 - ``php artisan route:clear``
 
 **Run Sample Test**
 - ``php artisan test --testsuite=Feature``
+
 
 ### mysql
 
