@@ -134,6 +134,13 @@ JSON BODY:
 **Run PHP Container**
 - ``docker exec -it php /bin/sh``
 
+
+**Composer Update**
+- ``php composer update``
+  
+**API KEY**
+- ``php artisan apikey:generate Laravel``
+
 **Create Tables with Sample Data** 
 - ``php artisan migrate --seed``
 - ``php artisan migrate:fresh --seed``
