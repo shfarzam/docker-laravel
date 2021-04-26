@@ -34,8 +34,8 @@ COPY --chown=www:www ./src /var/www
 # Copy existing application directory contents
 COPY ./src /var/www
 # Copy composer.lock and composer.json ./src/composer.lock
-COPY  ./src/composer.json /var/www/
-COPY  ./src/composer.lock /var/www/
+#COPY  ./src/composer.json /var/www/
+#COPY  ./src/composer.lock /var/www/
 
 #install nodejs-npm
 RUN apk update && apk add nodejs nodejs-npm
