@@ -32,8 +32,8 @@
     </style>
 </head>
 <body>
-<!-- Menu -->
 
+<!-- Menu -->
 <nav class="navbar navbar-inverse sticky-top bg-light navbar-light">
     <div class="container-fluid">
         <!-- Toggler/collapsibe Button -->
@@ -48,6 +48,9 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#ModalCenter"><h4>Let's read a little bit more about me</h4></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="tel:004917643613808"><h4>Let's talk via Phone</h4></a>
                 </li>
                 <li class="nav-item">
@@ -55,6 +58,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#cv-section"><h4>Let's see my CV</h4></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login"><h4>See Simple Login Demo</h4></a>
                 </li>
             </ul>
         </div>
@@ -312,5 +318,42 @@
 </footer>
 <!-- End Footer -->
 
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLongTitle">A little bit more about me</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-light">
+                <h2 style="font-family: 'Dosis', sans-serif">
+                    “I love turning great ideas into reality.”
+                </h2>
+                <br>
+                <h4 style="text-align: justify;text-justify: inter-word;">
+                    <p>
+                        I am Shahriar Farzam. I was born at 1983 in Tehran, Iran.
+                        Also I am a Software Engineer with experience in a number of technologies, frameworks and programming languages, focusing on PHP and Web technologies.
+                    </p>
+                    <p>
+                        I believes the team is the key of success. Encourage dialogue as the main tool of the team, decision-making, encourage independent learning, imagination and initiatives in new ideas.
+                    </p>
+                    <p>
+                        Passionate about continuous improvement, good manners, social skills, teamwork, hard work, fast learner, tenacity to face problems, customer satisfaction and the duty to do things the right way.
+                    </p>
+                    Years of experience designing and developing desktop and web applications. Proficient in Object-Oriented Design, Software Analysis, Agile Development, Database Design, Troubleshooting, Debugging.<br>
+                    Now, everything begins. Again.<br>
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
