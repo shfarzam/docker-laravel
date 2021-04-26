@@ -1,7 +1,9 @@
+
 # Laravel Project
 A Sample Project to show how could the Laravel by docker config and RUN in WEB and API full.
 
 ## Usage
+
 
 To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 
@@ -163,6 +165,7 @@ JSON BODY:
 - ``docker exec -it mysql mysql -u{user} -p{secret} -h {host}``
 
 ##Docker
+
 Run git on Server
 ```
 docker build -t git:latest .
