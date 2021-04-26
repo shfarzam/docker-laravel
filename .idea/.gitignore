@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/../../docker-laravel\.idea/codestream.xml
+# Datasource local storage ignored files
+/../../../../:\Repo\docker-laravel\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
