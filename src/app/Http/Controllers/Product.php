@@ -32,6 +32,7 @@ class Product extends Controller
             $product = new ProductDB;
             $product->product_id = $request->product_id;
             $product->p_name = $request->p_name;
+            $product->user_id = $GLOBALS['userInfo']->id;
             $save = $product->save();
 
             if ($save) {
