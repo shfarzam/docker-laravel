@@ -18,7 +18,7 @@ class Product extends Controller
 
         //define rules
         $rules = [
-            'product_id'   => 'required|numeric|unique:customers',
+            'product_id'   => 'required|numeric|unique:products',
             'p_name'    => 'required|string|max:150',
             ];
 
