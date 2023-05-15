@@ -11,9 +11,7 @@ First add your entire Laravel project to the `src` folder, then open a terminal 
 
 **Please do not forget to make your _.env_ File in _/src_ Folder**
 
-## Live Version
 
-Here [Live Version](http://157.90.254.193) you can find Live Version of this Sample Project
 ## API Routes
 
 First you need valid Token to could send/receive Data over API.
@@ -164,7 +162,7 @@ JSON BODY:
 **Run MYSQL Container and connect MySQL**
 - ``docker exec -it mysql mysql -u{user} -p{secret} -h {host}``
 
-##Docker
+## Docker
 
 Run git on Server
 ```
